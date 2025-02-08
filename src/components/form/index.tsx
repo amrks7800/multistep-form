@@ -149,7 +149,7 @@ const Form = ({ step, setStep, planType, setPlanType }: FormProps) => {
         )}
         {step < 4 && (
           <Button variant="primary" className="second">
-            Continue
+            Next Step
           </Button>
         )}
         {step === 4 && (

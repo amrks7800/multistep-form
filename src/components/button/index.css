@@ -2,11 +2,20 @@
   padding: 1rem;
   color: var(--clr-neutral-100);
   border-radius: 0.25rem;
+  transition: color 250ms ease, opacity 250ms ease;
+}
+
+.btn:not(.ghost):hover {
+  opacity: 0.85;
 }
 
 .btn.ghost {
   background-color: transparent;
   color: var(--clr-neutral-400);
+}
+
+.btn.ghost:hover {
+  color: var(--clr-primary-indigo);
 }
 
 .btn.primary {
