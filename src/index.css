@@ -85,12 +85,6 @@ button {
   margin-inline: auto;
 }
 
-@media screen and (min-width: 1440px) {
-  .container {
-    --container-width: 1400px;
-  }
-}
-
 .flow > * + * {
   margin-top: var(--flow-spacer, 1rem);
 }
