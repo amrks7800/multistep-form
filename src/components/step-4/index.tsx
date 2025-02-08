@@ -1,4 +1,4 @@
-import { formatPrice } from "@/utils"
+import { capitalize, formatPrice } from "@/utils"
 import Button from "../button"
 import "./index.css"
 import { PLANS, ADD_ONS } from "@/constants"
@@ -29,7 +29,7 @@ const Step4 = ({ planType, addons, plan, setStep }: Step4Props) => {
           <div className="plan-details">
             <div className="">
               <h2>
-                {selectedPlan.name}({planType.toUpperCase()})
+                {selectedPlan.name} ({capitalize(planType)})
               </h2>
               <Button
                 variant="ghost"
@@ -54,7 +54,7 @@ const Step4 = ({ planType, addons, plan, setStep }: Step4Props) => {
             <li key={addon.id}>
               <h3>{addon.title}</h3>
               <span className="price">
-                {formatPrice(addon.price, addon.type)}
+                +{formatPrice(addon.price, addon.type)}
               </span>
             </li>
           ))}
@@ -62,7 +62,7 @@ const Step4 = ({ planType, addons, plan, setStep }: Step4Props) => {
       </div>
 
       <div className="total">
-        <h3>Total ({planType})</h3>
+        <h3>Total ({capitalize(planType)})</h3>
         <span className="price">
           {formatPrice(totalPrice, selectedPlan?.type || "monthly")}
         </span>

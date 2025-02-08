@@ -29,7 +29,7 @@ const AddonCheckbox = ({
         <h2>{addon.title}</h2>
         <p>{addon.desc}</p>
       </div>
-      <p>{formatPrice(addon.price, addon.type)}</p>
+      <p className="price">+{formatPrice(addon.price, addon.type)}</p>
     </label>
   )
 }

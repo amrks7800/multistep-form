@@ -2,7 +2,7 @@
   display: block;
   padding: 1rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--clr-neutral-300);
+  border: 2px solid var(--clr-neutral-300);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,13 +18,6 @@
   border-color: var(--clr-primary-indigo);
   background-color: var(--clr-neutral-200);
 }
-
-/* @media screen and (min-width: 1000px) {
-  .checkbox-group {
-    flex-direction: column;
-    align-items: start;
-  }
-} */
 
 .checkbox-group input {
   width: 20px;
@@ -47,4 +40,9 @@
 
 .checkbox-group .content :is(h2, span) {
   color: var(--clr-primary-blue);
+}
+
+.checkbox-group .price {
+  color: var(--clr-primary-indigo) !important;
+  font-weight: 500;
 }

@@ -46,11 +46,17 @@ span.price {
   align-items: center;
   justify-content: space-between;
   margin-block: 1rem;
+  padding-inline: 1rem;
 }
 
 .total h3 {
   color: var(--clr-neutral-400);
   font-weight: 500;
+}
+
+.total span.price {
+  color: var(--clr-primary-indigo);
+  font-size: 1.25rem;
 }
 
 @media (min-width: 1000px) {
