@@ -1,4 +1,4 @@
-import { FieldErrors, UseFormRegister } from "react-hook-form"
+import { FieldErrors, UseFormRegister, UseFormSetValue } from "react-hook-form"
 import "./index.css"
 import Switch from "@/components/switch"
 import { PLANS } from "@/constants"
@@ -7,12 +7,19 @@ import { Dispatch, SetStateAction } from "react"
 
 type Step2Props = {
   register: UseFormRegister<any>
+  setValue: UseFormSetValue<any>
   errors: FieldErrors<any>
   planType: "monthly" | "yearly"
   setPlanType: Dispatch<SetStateAction<"monthly" | "yearly">>
 }
 
-const Step2 = ({ register, errors, planType, setPlanType }: Step2Props) => {
+const Step2 = ({
+  register,
+  errors,
+  planType,
+  setPlanType,
+  setValue,
+}: Step2Props) => {
   return (
     <div className="form__step">
       <div className={`plan__wrapper ${errors["plan"] && "error"}`}>
@@ -26,6 +33,8 @@ const Step2 = ({ register, errors, planType, setPlanType }: Step2Props) => {
           id="plan-switch"
           onCheckChange={isChecked => {
             setPlanType(isChecked ? "yearly" : "monthly")
+            setValue("plan", null)
+            setValue("addon", null)
           }}
           checked={planType === "yearly"}
         />

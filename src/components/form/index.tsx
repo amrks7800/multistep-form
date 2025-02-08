@@ -5,7 +5,7 @@ import Step1 from "../step-1"
 import Button from "../button"
 import Step2 from "../step-2"
 import Step3 from "../step-3"
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, SetStateAction, useEffect } from "react"
 import Step4 from "../step-4"
 import ThankYou from "../thank-you"
 import { step1Schema, step2Schema } from "@/schemas"
@@ -20,22 +20,19 @@ type FormProps = {
 const Form = ({ step, setStep, planType, setPlanType }: FormProps) => {
   const [formData, setFormData] = useLocalStorage("form_data", {})
 
-  function confirmSubmission() {
-    setStep(5)
-  }
-
-  function handlePrevious() {
-    setStep((prev: number) => prev - 1)
-  }
-
   const {
     register,
     handleSubmit,
     setError,
+    setValue,
     formState: { errors },
   } = useForm({
     defaultValues: formData,
   })
+
+  useEffect(() => {
+    setFormData((prev: {}) => ({ ...prev, plan: null, addon: null }))
+  }, [planType])
 
   function onSubmit(data: any) {
     console.log(data)
@@ -89,6 +86,13 @@ const Form = ({ step, setStep, planType, setPlanType }: FormProps) => {
     }
   }
 
+  function confirmSubmission() {
+    setStep(5)
+  }
+
+  function handlePrevious() {
+    setStep((prev: number) => prev - 1)
+  }
   const renderStep = () => {
     switch (step) {
       case 1:
@@ -98,6 +102,7 @@ const Form = ({ step, setStep, planType, setPlanType }: FormProps) => {
           <Step2
             planType={planType}
             setPlanType={setPlanType}
+            setValue={setValue}
             errors={errors}
             register={register}
           />
