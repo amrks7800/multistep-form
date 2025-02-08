@@ -1,0 +1,61 @@
+.form__step {
+  margin-block: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.payment-details {
+  background-color: var(--clr-neutral-200);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.plan-details {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  justify-content: space-between;
+}
+
+.plan-details h2 {
+  font-size: 1.2rem;
+  color: var(--clr-primary-blue);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+span.price {
+  color: var(--clr-primary-blue);
+  font-weight: bold;
+}
+
+.payment-details ul {
+  margin-block: 1rem;
+}
+
+.payment-details ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--clr-neutral-400);
+  font-weight: 500;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: 1rem;
+}
+
+.total h3 {
+  color: var(--clr-neutral-400);
+  font-weight: 500;
+}
+
+@media (min-width: 1000px) {
+  .form__step {
+    width: 450px;
+    height: 250px;
+  }
+}

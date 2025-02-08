@@ -1,0 +1,46 @@
+.radio-group {
+  display: block;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--clr-neutral-300);
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.radio-group:hover {
+  border-color: var(--clr-primary-indigo);
+}
+
+.radio-group:has(input:checked) {
+  border-color: var(--clr-primary-indigo);
+  background-color: var(--clr-neutral-200);
+}
+
+@media screen and (min-width: 1000px) {
+  .radio-group {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+.radio-group input {
+  display: none;
+}
+
+.radio-group .content {
+  --flow-spacer: 4px;
+}
+
+.radio-group .content h2 {
+  font-weight: bold;
+}
+
+.radio-group .content span {
+  display: block;
+  font-weight: 400;
+}
+
+.radio-group .content :is(h2, span) {
+  color: var(--clr-primary-blue);
+}

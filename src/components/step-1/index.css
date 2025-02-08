@@ -1,0 +1,6 @@
+.form__step {
+  margin-block: 1rem;
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+}
